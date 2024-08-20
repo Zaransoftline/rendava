@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    background-color: #000;
+}
+
+.header {
+    display: flex;
+    padding-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    height: 1006px;
+    padding-inline: 4vw;
+    background: linear-gradient(180.00deg, rgb(2, 0, 2) 64%,rgba(239, 37, 113, 0.9) 100%);
+}
+
+.topbar,
+.header-content {
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    font-family: "Michroma", sans-serif;
+    color: #1ED9D9;
+    font-size: 24px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.section-header {
+    font-family: "Zen Tokyo Zoo", system-ui;
+    color: #EF2571;
+    font-size: 70px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.section-content {
+    max-width: 1280px;
+    width: 100%;
+}
+
+.header-header {
+    width: 40%;
+    min-width: 500px;
+}
+
+.header-content {
+    gap: 30px;
+}
+
+.header-img {
+    width: 55%;
+    min-height: 393px;
+    height: auto;
+    border: 5px solid #EF2571
+}
+
+.about {
+    padding-inline: 4vw;
+    height: 709px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 75px;
+    padding-top: 84px;
+    background: linear-gradient(0.00deg, rgb(2, 0, 2) 52.5%,rgba(239, 37, 113, 0.9) 100%);
+}
+
+.about-header {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.about-us-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 74px;
+}
+
+.about-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-text {
+    max-width: 900px;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    color: #1ED9D9;
+}
+
+.about-images {
+    width: 170px;
+    height: 170px;
+    position: relative;
+}
+
+.about-img-1-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.about-img-1-2 {
+    position: absolute;
+    top: 70px;
+    left: 60px;
+}
+
+.about-img-2-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.about-img-2-2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 110px;
+}
+
+.why {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 489px;
+    row-gap: 47px;
+    background: linear-gradient(0.00deg, rgba(239, 37, 113, 0.6) 18.464%,rgb(2, 0, 2) 58.5%);
+}
+
+.why-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.why-card-img {
+    height: 100px;
+}
+
+.why-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.why-card-header {
+    font-family: "Lexend Giga", sans-serif;
+    font-size: 24px;
+    color: #1ED9D9;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin-block: 10px;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 666px;
+    background: linear-gradient(180.00deg, rgba(239, 37, 113, 0.6),rgb(2, 0, 0) 100%);
+}
+
+.review-header {
+    margin: 0;
+}
+
+.review-text {
+    font-family: "Lexend Giga", sans-serif;
+    font-size: 26px;
+    max-width: 1015px;
+    text-align: center;
+    color: #1ED9D9;
+    margin-top: 50px;
+}
+
+.name {
+    font-family: "Inter", sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: #EF2571;
+    font-weight: 400;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 2079px;
+    background: linear-gradient(180.00deg, rgb(2, 0, 2),rgba(239, 37, 113, 0.58) 100%);
+}
+
+.gallery-header {
+    margin: 0;
+    font-size: 100px;
+    font-family: "Zen Tokyo Zoo", system-ui;
+    color: #EF2571;
+    height: fit-content;
+    font-weight: 400;
+}
+
+.tabs {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 175px;
+    height: 60px;
+    background-color: #1ED9D9;
+    font-size: 40px;
+    font-family: "Inter", sans-serif;
+    color: #EF2571;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    place-items: center;
+    gap: 50px;
+    margin-top: 176px;
+}
+
+.gallery-card {
+    width: 100%;
+    height: 500px;
+    background: rgb(217, 217, 217);
+}
