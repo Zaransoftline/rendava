@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Giga:wght@100..900&family=Michroma&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="body">
     <header class="header">
             <nav class="topbar">
                 <a class="logo-link">
@@ -23,6 +23,13 @@
                     <li><a class="nav-link">Portfolio</a></li>
                     <li><a class="nav-link">Contact Us</a></li>
                 </ul>
+
+                <div class="hamburger-menu">
+                    <input id="menu__toggle" type="checkbox" />
+                    <label class="menu__btn" for="menu__toggle">
+                      <span></span>
+                    </label>
+                </div>
             </nav> 
 
         <div class="header-content">
@@ -33,6 +40,17 @@
             <div class="header-img"></div>
         </div>
     </header>
+
+    <aside class="menu" id="menu">
+        <div class="menu-content">
+          <ul class="menu-nav-list" id="menu-nav-list">
+            <li><a class="menu-nav-link active">Home</a></li>
+            <li><a class="menu-nav-link">Shop</a></li>
+            <li><a class="menu-nav-link">About Us</a></li>
+            <li><a class="menu-nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </aside>
 
     <main>
         <section class="section about">
@@ -133,5 +151,7 @@
             </div>
         </section>
     </main> 
+
+    <script src="./script.js"></script>
 </body>
 </html>
