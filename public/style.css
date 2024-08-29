@@ -390,30 +390,25 @@ body {
 }
 
 .form {
-    width: 100%;
-    max-width: 900px;
+    width: 900px;
     height: 500px;
     background-color: #000;
     display: flex;
     align-items: center;
-    padding-inline: 2%;
-    gap: 2%;
+    padding-inline: 30px;
+    gap: 40px;
     padding-block: 30px;
     justify-content: space-between;
 }
 
 .form-left {
-    width: 47%;
+    width: 100%;
     height: 440px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 20px;
     padding-top: 10px;
-}
-
-.form-right {
-    width: 47%;
-    height: 440px;
 }
 
 .input-container {
@@ -441,7 +436,7 @@ body {
 
 textarea {
     height: 100%;
-    width: 100%;
+    width: calc(100% - 10px);
     resize: none;
     background-color: transparent;
     border: 1px solid #454545;
@@ -451,12 +446,16 @@ textarea {
     font-family: "Lexend Giga", sans-serif;
     padding-top: 10px;
     padding-left: 10px;
+    grid-column: span 1;
+    grid-row: span 3;
 }
 
 .inputs {
     display: flex;
     flex-direction: column;
     row-gap: 40px;
+    grid-row: span 2;
+    grid-column: span 1;
 }
 
 .submit-btn {
@@ -544,7 +543,9 @@ textarea {
 .buttons {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
+    grid-column: span 1;
+    grid-row: span 1;
 }
 
 .footer-nav-link {
@@ -569,6 +570,10 @@ textarea {
     max-width: 1280px;
     background-color: #000;
     margin-top: 40px;
+}
+
+.contact-info-2 {
+    display: none;
 }
 
 .license div {
@@ -652,6 +657,116 @@ textarea {
         height: 500px;
     }
 }
+
+
+@media (max-width: 980px) {
+    .form-right {
+        height: 90%;
+        width: 50%;
+    }
+
+    textarea {
+        width: calc(100% - 10px);
+    }
+
+    .footer {
+        height: 200px;
+    }
+
+    .form {
+        width: unset;
+    }
+
+    .contact {
+        height: 700px;
+        background: linear-gradient(180.00deg, rgba(239, 37, 113, 0.6),rgba(2, 0, 0, 1) 20%);
+    }
+}
+
+@media (max-width: 750px) {
+    .form {
+        width: 100%;
+        flex-direction: column;
+        height: auto; /* Adjust height to auto for better content fitting */
+    }
+
+    .contact {
+        overflow: hidden;
+        padding-bottom: 0;
+        background: linear-gradient(180deg, rgba(239, 37, 113, 0.6), rgba(2, 0, 0, 1) 20%);
+        height: auto; /* Adjust height to auto for better responsiveness */
+    }
+
+    .contact-content {
+        padding-inline: 4vw;
+    }
+
+    .contact-info {
+        display: none;
+    }
+
+    .contact-info-2 {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .contact-link {
+        color: #EF2571;
+    }
+
+    .form-left {
+        width: 100%;
+        margin-bottom: 20px; /* Add margin for spacing */
+    }
+
+    .form-right {
+        width: 100%; /* Adjust width to 100% for full width on small screens */
+        height: auto; /* Adjust height to auto for better fitting */
+        margin-bottom: 20px; /* Add margin for spacing */
+    }
+
+    .footer {
+        height: auto; /* Set height to auto for better content fitting */
+        padding: 20px 0; /* Add padding for spacing */
+    }
+
+    textarea {
+        width: calc(100% - 10px);
+        order: 2;
+        margin-top: 10px; /* Add margin for spacing */
+    }
+
+    .inputs {
+        order: 1;
+        margin-bottom: 10px; /* Add margin for spacing */
+    }
+
+    .buttons {
+        order: 3;
+        margin-top: 10px; /* Add margin for spacing */
+    }
+
+    .inputs {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    textarea {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .buttons {
+        grid-column: span 2;
+        grid-row:  span 1;
+    }
+
+    .contact-header {
+        font-size: 60px;
+    }
+}
+
 
 @media (max-width: 900px) {
     .footer-topbar {
@@ -795,6 +910,10 @@ textarea {
 
     .header {
         height: 900px;
+    }
+
+    .contact-header {
+        font-size: 50px;
     }
 }
 
