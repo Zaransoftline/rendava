@@ -9,6 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Giga:wght@100..900&family=Michroma&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js",
+            "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/"
+          }
+        }
+    </script>
 </head>
 <body id="body">
     <header class="header">
@@ -221,5 +229,61 @@
 
     <script src="./menu.js"></script>
     <script src="./inputs.js"></script>
+    <script type="module">
+        import * as THREE from 'three';
+        import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
+        import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+    
+        // Scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        const headerImg = document.querySelector('.header-img');
+    
+        // Initialize OrbitControls
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.15;
+        controls.enableZoom = true;
+        controls.rotateSpeed = 0.25;
+        controls.zoomSpeed = 2.8;
+    
+        function updateSize() {
+            renderer.setSize(headerImg.clientWidth, headerImg.clientHeight);
+            camera.aspect = headerImg.clientWidth / headerImg.clientHeight;
+            camera.updateProjectionMatrix();
+            controls.update(); // Update controls on resize
+        }
+        
+        updateSize();
+        headerImg.appendChild(renderer.domElement);
+    
+        // Add lighting
+        const dl = new THREE.DirectionalLight(0x2a2a2a, 2.5);
+dl.position.set(25, 50, -25);
+scene.add(dl);
+scene.add(new THREE.AmbientLight(0x2a2a2a, 0.25));
+        camera.position.z = 5;
+    
+        // Load the FBX model
+        const loader = new FBXLoader();
+        loader.load('./model.fbx', function(object) {
+            object.scale.set(0.02, 0.02, 0.02);  // Scale the model if it's too large
+            scene.add(object);
+        }, undefined, function(error) {
+            console.error(error);
+        });
+    
+        // Render loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update(); // Update controls
+            renderer.render(scene, camera);
+        }
+        animate();
+    
+        // Update on resize
+        window.addEventListener('resize', updateSize);
+    </script>
 </body>
 </html>
